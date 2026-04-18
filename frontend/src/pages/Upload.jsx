@@ -69,16 +69,18 @@ export default function Upload() {
     const formData = new FormData();
     formData.append('file', selectedFile);
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
     try {
       // 1. Predict
-      const predictRes = await axios.post('http://localhost:8000/predict', formData, {
+      const predictRes = await axios.post(`${API_URL}/predict`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       
       const { prediction, confidence } = predictRes.data;
 
       // 2. Generate Report
-      const reportRes = await axios.post('http://localhost:8000/generate-report', {
+      const reportRes = await axios.post(`${API_URL}/generate-report`, {
         prediction,
         confidence
       });
