@@ -1,0 +1,20 @@
+# Environments
+backend/venv/
+node_modules/
+frontend/node_modules/
+__pycache__/
+*.pyc
+
+# Datasets & Models
+Hyperspectral kidney Dataset/
+backend/model/*.keras
+backend/model/*.h5
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
